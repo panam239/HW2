@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(HW2 VERSION 0.0.1$ENV{TRAVIS_BUILD_NUMBER})
 set(Boost_DEBUG ON)
-find_package(Boost COMPONENTS unit_test_framework filesystem REQUIRED)
+find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 configure_file(version.h.in version.h)
 
@@ -15,6 +15,7 @@ set_target_properties(HW2_cli HW2 HW2_filter unit_test PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
+
 target_include_directories(HW2
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
@@ -26,14 +27,6 @@ target_include_directories(HW2_filter
 set_target_properties(unit_test PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
-)
-
-set_target_properties(HW2_filter PROPERTIES
-    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
-)
-
-
-target_link_libraries(HW2_filter PRIVATE ${Boost_LIBRARIES}
 )
 
 target_link_libraries(HW2_cli PRIVATE ${Boost_LIBRARIES}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "address.h"
+
 void subfilter(std::vector<Address*>& ip_pool) {
     for(auto a:ip_pool) {
         std::cout << a << std::endl;

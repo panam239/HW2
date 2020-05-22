@@ -1,5 +1,6 @@
-#include "address.h"
 #include <boost/algorithm/string.hpp>
+
+#include "address.h"
 
 const std::array<char, 16> hex{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
