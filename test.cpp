@@ -1,9 +1,9 @@
 #define BOOST_TEST_MODULE unit_test
 
-#include "lib.h"
-#include "filters.h"
-
 #include <boost/test/unit_test.hpp>
+
+#include "filters.h"
+#include "lib.h"
 
 BOOST_AUTO_TEST_SUITE(unit_test)
 
